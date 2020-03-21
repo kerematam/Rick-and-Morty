@@ -1,0 +1,13 @@
+## file extensions
+*.*
+!*.css
+!*.scss
+!*.js
+!*.json
+!*.jsx
+!*.less
+!*.md
+!*.mdx
+!*.ts
+!*.tsx
+!*.ymls

@@ -1,0 +1,22 @@
+.root {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.menu_item {
+  display: inline-flex;
+  .menu_iten_button {
+    margin-bottom: 15px;
+  }
+  .menu_item_icon {
+    padding-right: 5px;
+    padding-bottom: 3px;
+  }
+  .menu_item_text {
+    text-transform: none;
+  }
+}
+.menu_item_delimiter {
+  margin-right: 3px;
+  margin-top: 10px;
+}

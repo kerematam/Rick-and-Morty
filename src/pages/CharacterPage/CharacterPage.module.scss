@@ -1,0 +1,39 @@
+/*  check before send : https://stackoverflow.com/questions/9980531/center-image-in-div-horizontally  */
+.img_detail {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img_container {
+  min-width: fit-content;
+}
+
+.back_button {
+  width: 100%;
+}
+
+.detail_card {
+  font-family: Roboto;
+  width: 300px;
+  margin-bottom: 20px;
+  .detail_item {
+    margin: 4px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .detail_item_key {
+    font-weight: 500;
+    margin-left: 5px;
+  }
+  .detail_item_value {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}
+
+// .page_left_column {
+//   direction: 'column';
+//   justify-self: 'center';
+//   align-items: 'center';
+// }
