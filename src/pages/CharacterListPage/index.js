@@ -6,6 +6,8 @@ import { actions, useCharacterReduxInjector, characterSelector } from './redux'
 import LazyScroll from './LazyScroll'
 import styles from './CharacterListPage.module.scss'
 
+import { LinearProgress } from '@material-ui/core/'
+
 export default React.memo(function CharacterListPage() {
   useCharacterReduxInjector()
   const dispatch = useDispatch()
@@ -18,6 +20,9 @@ export default React.memo(function CharacterListPage() {
 
   return (
     <div className={styles.root}>
+      {loading && (
+        <LinearProgress className={styles.progress_bar}></LinearProgress>
+      )}
       <Helmet>
         <title>Rick and Morty</title>
       </Helmet>
