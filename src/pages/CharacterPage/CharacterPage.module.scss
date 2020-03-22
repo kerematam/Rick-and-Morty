@@ -1,14 +1,3 @@
-/*  check before send : https://stackoverflow.com/questions/9980531/center-image-in-div-horizontally  */
-.img_detail {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.img_container {
-  min-width: fit-content;
-}
-
 .back_button {
   width: 100%;
 }
@@ -32,8 +21,17 @@
   }
 }
 
-// .page_left_column {
-//   direction: 'column';
-//   justify-self: 'center';
-//   align-items: 'center';
-// }
+.detail_card_container {
+  margin-right: 30px;
+  margin-bottom: 20px;
+}
+
+.table_container {
+  padding-top: 30px;
+  max-width: 400px;
+}
+
+.page_container {
+  flex-wrap: wrap;
+  display: flex;
+}

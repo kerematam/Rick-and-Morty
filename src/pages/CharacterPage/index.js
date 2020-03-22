@@ -4,7 +4,6 @@ import EpisodesTable from './EpisodesTable'
 import { useSelector, useDispatch } from 'react-redux'
 import { useRouteMatch } from 'react-router-dom'
 import {
-  Grid,
   Paper,
   Divider,
   Typography,
@@ -23,7 +22,7 @@ import history from 'utils/history'
 import styles from './CharacterPage.module.scss'
 
 /**
- * Returns character and episodes
+ *  Returns character and episodes
  *  if redirected from from list page, it loads from store
  *  if directly accessed via URL; load action is triggered
  */
@@ -67,65 +66,53 @@ const CharacterPage = () => {
   return (
     <div>
       <Helmet>
-        <title>Rick and Morty / {`${character?.name}`}</title>
+        <title>{character?.name}</title>
       </Helmet>
-      <Grid container alignItems="flex-start" flexShrink="0">
-        <Grid item xs={3}>
-          <Grid container className={styles.page_left_column}>
-            <Grid item>
-              <Paper className={styles.detail_card}>
-                <Button
-                  onClick={goBack}
-                  className={styles.back_button}
-                  startIcon={<ArrowBackIcon />}
-                >
-                  Characters Page
-                </Button>
-              </Paper>
-              <Paper className={styles.detail_card}>
-                {characterLoading && <LinearProgress></LinearProgress>}
-                <Typography className={styles.detail_item}>
-                  <span className={styles.detail_item_key}>Name</span>
-                  <span className={styles.detail_item_value}>
-                    {character?.name}
-                  </span>
-                </Typography>
-                <Divider />
-                <Typography className={styles.detail_item}>
-                  <span className={styles.detail_item_key}>Status</span>
-                  <span className={styles.detail_item_value}>
-                    {character?.status}
-                  </span>
-                </Typography>
-                <Divider />
-                <Typography className={styles.detail_item}>
-                  <span className={styles.detail_item_key}>Origin</span>
-                  <span className={styles.detail_item_value}>
-                    {character?.origin?.name}
-                  </span>
-                </Typography>
-                <Divider />
-              </Paper>
-            </Grid>
-            <Grid className={styles.background_blue}>
-              <Paper>
-                <img
-                  className={styles.img_detail}
-                  alt="Character"
-                  src={character?.image}
-                />
-              </Paper>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item className={styles.background_red} xs={9}>
+      <div className={styles.page_container}>
+        <div className={styles.detail_card_container}>
+          <Paper className={styles.detail_card}>
+            <Button
+              onClick={goBack}
+              className={styles.back_button}
+              startIcon={<ArrowBackIcon />}
+            >
+              Characters Page
+            </Button>
+          </Paper>
+          <Paper className={styles.detail_card}>
+            {characterLoading && <LinearProgress></LinearProgress>}
+            <Typography className={styles.detail_item}>
+              <span className={styles.detail_item_key}>Name</span>
+              <span className={styles.detail_item_value}>
+                {character?.name}
+              </span>
+            </Typography>
+            <Divider />
+            <Typography className={styles.detail_item}>
+              <span className={styles.detail_item_key}>Status</span>
+              <span className={styles.detail_item_value}>
+                {character?.status}
+              </span>
+            </Typography>
+            <Divider />
+            <Typography className={styles.detail_item}>
+              <span className={styles.detail_item_key}>Origin</span>
+              <span className={styles.detail_item_value}>
+                {character?.origin?.name}
+              </span>
+            </Typography>
+            <Divider />
+          </Paper>
+          <img alt="Character" src={character?.image} />
+        </div>
+        <div>
           <EpisodesTable
+            className={styles.table}
             episodes={episodes}
             loading={episodesLoading || characterLoading}
           />
-        </Grid>
-        <Grid item xs={12}></Grid>
-      </Grid>
+        </div>
+      </div>
     </div>
   )
 }
