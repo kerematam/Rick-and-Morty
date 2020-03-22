@@ -9,6 +9,7 @@ export const initialState = {
   page: 1,
   hasMore: true,
   characters: [],
+  error: false,
 }
 
 const slice = createSlice({

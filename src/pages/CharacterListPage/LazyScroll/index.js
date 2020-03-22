@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import InfiniteScroll from 'react-infinite-scroller'
 import Card from './CharacterCard'
 
-const LazyScroll = ({ characters, loadMore, loading, hasMore }) => {
+const LazyScroll = ({ characters = [], loadMore, loading, hasMore }) => {
   return (
     <InfiniteScroll
       pageStart={0}
@@ -13,7 +13,7 @@ const LazyScroll = ({ characters, loadMore, loading, hasMore }) => {
     >
       <Grid container spacing={3}>
         {characters.map(character => (
-          <Grid key={character.id} item sm={6} md={4} lg={2}>
+          <Grid key={character.id} item xs={12} sm={6} md={3}>
             <Card character={character} />
           </Grid>
         ))}

@@ -31,7 +31,7 @@ export default function LayoutHeader() {
       <span className={styles.menu_item}>
         <Button
           onClick={handleClickHomepage}
-          className={styles.menu_iten_button}
+          className={styles.menu_item_button}
         >
           <HomeIcon className={styles.menu_item_icon} fontSize="small" />
           <Typography className={styles.menu_item_text}>Characters</Typography>

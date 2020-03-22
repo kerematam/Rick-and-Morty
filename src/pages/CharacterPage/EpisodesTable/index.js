@@ -1,5 +1,5 @@
 import React from 'react'
-
+import PropTypes from 'prop-types'
 import {
   Table,
   TableBody,
@@ -11,18 +11,9 @@ import {
   LinearProgress,
 } from '@material-ui/core'
 
-// import Table from '@material-ui/core/Table'
-// import TableBody from '@material-ui/core/TableBody'
-// import TableCell from '@material-ui/core/TableCell'
-// import TableContainer from '@material-ui/core/TableContainer'
-// import TableHead from '@material-ui/core/TableHead'
-// import TableRow from '@material-ui/core/TableRow'
-// import Paper from '@material-ui/core/Paper'
-// import LinearProgress from '@material-ui/core/LinearProgress'
-
 import styles from './EpisodesTable.module.scss'
 
-export default function EpisodesTable({ episodes, loading }) {
+const EpisodesTable = React.memo(({ episodes, loading }) => {
   return (
     <TableContainer component={Paper}>
       {loading && <LinearProgress></LinearProgress>}
@@ -48,4 +39,11 @@ export default function EpisodesTable({ episodes, loading }) {
       </Table>
     </TableContainer>
   )
+})
+
+EpisodesTable.propTypes = {
+  episodes: PropTypes.array,
+  loading: PropTypes.bool,
 }
+
+export default EpisodesTable

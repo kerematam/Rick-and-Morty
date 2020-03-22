@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterCard should render correctly 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root root MuiPaper-elevation1"
+>
+  <button
+    className="MuiButtonBase-root MuiCardActionArea-root"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <img
+      className="MuiCardMedia-root media MuiCardMedia-media MuiCardMedia-img"
+      title="Rick Sanchez"
+    />
+    <div
+      className="MuiCardContent-root content"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+      >
+        Rick Sanchez
+      </h2>
+      <p
+        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+      >
+        
+      </p>
+    </div>
+    <span
+      className="MuiCardActionArea-focusHighlight"
+    />
+  </button>
+</div>
+`;
+
+exports[`CharacterCard should render without crashing with corrupted backend data 1`] = `
+<div
+  className="MuiPaper-root MuiCard-root root MuiPaper-elevation1"
+>
+  <button
+    className="MuiButtonBase-root MuiCardActionArea-root"
+    disabled={false}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="button"
+  >
+    <img
+      className="MuiCardMedia-root media MuiCardMedia-media MuiCardMedia-img"
+      title={null}
+    />
+    <div
+      className="MuiCardContent-root content"
+    >
+      <h2
+        className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+      />
+      <p
+        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+      />
+    </div>
+    <span
+      className="MuiCardActionArea-focusHighlight"
+    />
+    <span
+      className="MuiTouchRipple-root"
+    />
+  </button>
+</div>
+`;

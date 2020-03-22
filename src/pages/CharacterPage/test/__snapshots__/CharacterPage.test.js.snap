@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterPage should render correctly 1`] = `
+<div>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-align-items-xs-flex-start"
+    flexShrink="0"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-3"
+    >
+      <div
+        className="MuiGrid-root page_left_column MuiGrid-container"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-item"
+        >
+          <div
+            className="MuiPaper-root detail_card MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <button
+              className="MuiButtonBase-root MuiButton-root MuiButton-text back_button"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <span
+                className="MuiButton-label"
+              >
+                <span
+                  className="MuiButton-startIcon MuiButton-iconSizeMedium"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className="MuiSvgIcon-root"
+                    focusable="false"
+                    role="presentation"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+                    />
+                  </svg>
+                </span>
+                Characters Page
+              </span>
+            </button>
+          </div>
+          <div
+            className="MuiPaper-root detail_card MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <p
+              className="MuiTypography-root detail_item MuiTypography-body1"
+            >
+              <span
+                className="detail_item_key"
+              >
+                Name
+              </span>
+              <span
+                className="detail_item_value"
+              />
+            </p>
+            <hr
+              className="MuiDivider-root"
+            />
+            <p
+              className="MuiTypography-root detail_item MuiTypography-body1"
+            >
+              <span
+                className="detail_item_key"
+              >
+                Status
+              </span>
+              <span
+                className="detail_item_value"
+              />
+            </p>
+            <hr
+              className="MuiDivider-root"
+            />
+            <p
+              className="MuiTypography-root detail_item MuiTypography-body1"
+            >
+              <span
+                className="detail_item_key"
+              >
+                Origin
+              </span>
+              <span
+                className="detail_item_value"
+              />
+            </p>
+            <hr
+              className="MuiDivider-root"
+            />
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root background_blue"
+        >
+          <div
+            className="MuiPaper-root MuiPaper-elevation1 MuiPaper-rounded"
+          >
+            <img
+              alt="Character"
+              className="img_detail"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root background_red MuiGrid-item MuiGrid-grid-xs-9"
+    >
+      <div
+        className="MuiPaper-root MuiTableContainer-root MuiPaper-elevation1 MuiPaper-rounded"
+      >
+        <table
+          aria-label="simple table"
+          className="MuiTable-root table"
+        >
+          <thead
+            className="MuiTableHead-root"
+          >
+            <tr
+              className="MuiTableRow-root MuiTableRow-head"
+            >
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head"
+                scope="col"
+              >
+                Episode 
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head"
+                scope="col"
+              >
+                Name
+              </th>
+              <th
+                aria-sort={null}
+                className="MuiTableCell-root MuiTableCell-head"
+                scope="col"
+              >
+                Air Date
+              </th>
+            </tr>
+          </thead>
+          <tbody
+            className="MuiTableBody-root"
+          />
+        </table>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"
+    />
+  </div>
+</div>
+`;

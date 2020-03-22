@@ -29,15 +29,16 @@ export default function CharacterCard({ character }) {
       <CardActionArea onClick={handleClick}>
         <CardMedia
           className={styles.media}
-          image={character.image}
-          title={character.name}
+          image={character?.image}
+          title={character?.name}
+          component="img"
         />
         <CardContent className={styles.content}>
           <Typography gutterBottom variant="h5" component="h2">
-            {character.name}
+            {character?.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {character.type}
+            {character?.type}
           </Typography>
         </CardContent>
       </CardActionArea>

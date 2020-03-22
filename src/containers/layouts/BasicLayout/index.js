@@ -3,6 +3,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 import CharacterListPage from 'pages/CharacterListPage'
 import CharacterPage from 'pages/CharacterPage'
 import Header from 'containers/layouts/Header'
+
 import styles from './BasicLayout.module.scss'
 
 const BasicLayout = () => {
