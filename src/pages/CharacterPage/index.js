@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useCallback } from 'react'
 import { Helmet } from 'react-helmet-async'
 import EpisodesTable from './EpisodesTable'
 import { useSelector, useDispatch } from 'react-redux'
@@ -26,7 +26,7 @@ import styles from './CharacterPage.module.scss'
  *  if redirected from from list page, it loads from store
  *  if directly accessed via URL; load action is triggered
  */
-const useGetCharacter = () => {
+const useSelectCharacter = () => {
   useCharacterReduxInjector()
   useCharacterDetailReduxInjector()
   const { character, loading, episodes, episodesLoading } = useSelector(
@@ -51,8 +51,9 @@ const useGetCharacter = () => {
   return [character, loading, episodes, episodesLoading]
 }
 
-const goBack = () => {
-  history.goBack()
+const useSelectPreviousRoute = () => {
+  const routes = useSelector(state => state.routerLocations)
+  return routes.length > 1 && routes.slice(-2)[0]
 }
 
 const CharacterPage = () => {
@@ -61,7 +62,21 @@ const CharacterPage = () => {
     characterLoading,
     episodes,
     episodesLoading,
-  ] = useGetCharacter()
+  ] = useSelectCharacter()
+
+  const previousRoute = useSelectPreviousRoute()
+
+  const goBack = useCallback(() => {
+    const pathname = previousRoute?.location?.pathname
+    const isPreviousHomePage =
+      pathname === '/characters/' || pathname === '/characters'
+
+    if (isPreviousHomePage) {
+      history.goBack()
+    } else {
+      history.push('/characters')
+    }
+  }, [previousRoute])
 
   return (
     <div>

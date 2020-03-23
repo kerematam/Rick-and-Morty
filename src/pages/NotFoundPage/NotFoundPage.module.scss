@@ -1,0 +1,12 @@
+.img_container {
+  display: flex;
+  justify-content: center;
+}
+
+.img {
+  max-width: 960px;
+  min-width: 400px;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}

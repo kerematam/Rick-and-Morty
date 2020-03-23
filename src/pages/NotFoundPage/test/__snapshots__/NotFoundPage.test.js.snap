@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NatfoundPage should render correctly 1`] = `
+<div
+  className="img_container"
+>
+  <img
+    className="img"
+    src="404.jpg"
+  />
+</div>
+`;

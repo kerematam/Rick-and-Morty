@@ -2,7 +2,6 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import createReducer from './rootReducers'
 import { routerMiddleware } from 'connected-react-router'
-
 import { createInjectorsEnhancer, forceReducerReload } from 'redux-injectors'
 
 function configureStore(initialState = {}, history) {
