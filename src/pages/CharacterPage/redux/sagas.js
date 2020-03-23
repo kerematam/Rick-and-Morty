@@ -1,4 +1,5 @@
 import { call, put, takeLatest, all } from 'redux-saga/effects'
+import { push } from 'connected-react-router'
 import { actions } from './index'
 import { api } from 'utils/api'
 
@@ -23,6 +24,7 @@ export function* loadCharacter({ payload }) {
     yield put(actions.loadEpisodes({ episodeUrls }))
   } catch (err) {
     yield put(actions.loadCharacterFailed())
+    yield put(push('/404'))
   }
 }
 

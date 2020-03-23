@@ -5,12 +5,7 @@ import Card from './CharacterCard'
 
 const LazyScroll = ({ characters = [], loadMore, loading, hasMore }) => {
   return (
-    <InfiniteScroll
-      pageStart={0}
-      loadMore={loadMore}
-      hasMore={true}
-      // loader={<div key={0}>{loading} ...</div>}
-    >
+    <InfiniteScroll pageStart={0} loadMore={loadMore} hasMore={true}>
       <Grid container spacing={3}>
         {characters.map(character => (
           <Grid key={character.id} item xs={12} sm={6} md={3}>

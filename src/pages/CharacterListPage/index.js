@@ -17,6 +17,11 @@ export default React.memo(function CharacterListPage() {
       dispatch(actions.loadCharacters())
     }
   }, [loading, error, hasMore, dispatch])
+  const loadMoreOnError = useCallback(() => {
+    if (!loading && hasMore) {
+      dispatch(actions.loadCharacters())
+    }
+  }, [loading, hasMore, dispatch])
 
   return (
     <div className={styles.root}>
@@ -26,12 +31,18 @@ export default React.memo(function CharacterListPage() {
       <Helmet>
         <title>Rick and Morty</title>
       </Helmet>
-      {error && (
-        <Button onClick={loadMore}>
-          Could not fetch data; Try to reload again.
+      <LazyScroll hasMore loading characters={characters} loadMore={loadMore} />
+      {loading && (
+        <Button
+          className={styles.reload_button}
+          variant="contained"
+          size="large"
+          color="primary"
+          onClick={loadMoreOnError}
+        >
+          Could not fetch characters; click to retry.
         </Button>
       )}
-      <LazyScroll hasMore loading characters={characters} loadMore={loadMore} />
     </div>
   )
 })
