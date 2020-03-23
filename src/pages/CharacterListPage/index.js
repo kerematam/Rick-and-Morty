@@ -32,7 +32,7 @@ export default React.memo(function CharacterListPage() {
         <title>Rick and Morty</title>
       </Helmet>
       <LazyScroll hasMore loading characters={characters} loadMore={loadMore} />
-      {loading && (
+      {error && (
         <Button
           className={styles.reload_button}
           variant="contained"
