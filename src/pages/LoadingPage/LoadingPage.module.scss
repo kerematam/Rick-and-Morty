@@ -1,0 +1,17 @@
+.img_container {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 200px;
+  object-fit: contain;
+}
+
+.text {
+  padding: 20px;
+  font-family: 'Roboto';
+  font-size: 1rem;
+}

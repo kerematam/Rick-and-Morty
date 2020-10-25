@@ -1,25 +1,29 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import CharacterListPage from 'pages/CharacterListPage'
-import CharacterPage from 'pages/CharacterPage'
+import LoadingPage from 'pages/LoadingPage'
 import Header from 'containers/layouts/Header'
 
 import styles from './BasicLayout.module.scss'
+
+const CharacterListPage = lazy(() => import('pages/CharacterListPage'))
+const CharacterPage = lazy(() => import('pages/CharacterPage'))
 
 const BasicLayout = () => {
   return (
     <div className={styles.root}>
       <Header />
       <div>
-        <Switch>
-          <Redirect exact from="/" to="/characters" />
-          <Route
-            path="/characters"
-            exact
-            render={() => <CharacterListPage />}
-          />
-          <Route path="/characters/:id" render={() => <CharacterPage />} />
-        </Switch>
+        <Suspense fallback={<LoadingPage />}>
+          <Switch>
+            <Redirect exact from="/" to="/characters" />
+            <Route
+              path="/characters"
+              exact
+              render={() => <CharacterListPage />}
+            />
+            <Route path="/characters/:id" render={() => <CharacterPage />} />
+          </Switch>
+        </Suspense>
       </div>
     </div>
   )
