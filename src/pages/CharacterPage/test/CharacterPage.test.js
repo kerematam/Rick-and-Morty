@@ -6,7 +6,6 @@ import configureStore from 'redux/configureStore'
 import { HelmetProvider } from 'react-helmet-async'
 import { createMemoryHistory } from 'history'
 import { Router } from 'react-router'
-import { MemoryRouter } from 'react-router-dom'
 
 const setup = () => {
   const store = configureStore()

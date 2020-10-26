@@ -3,8 +3,6 @@ import renderer from 'react-test-renderer'
 import CharacterCard from '../index'
 import { Provider } from 'react-redux'
 import configureStore from 'redux/configureStore'
-import { createBrowserHistory, createMemoryHistory } from 'history'
-import { browserHistory } from 'react-router'
 
 const character = {
   id: 1,

@@ -8,7 +8,7 @@ const LazyScroll = ({ characters = [], loadMore, loading, hasMore }) => {
     <InfiniteScroll pageStart={0} loadMore={loadMore} hasMore={true}>
       <Grid container spacing={3}>
         {characters.map(character => (
-          <Grid key={character.id} item xs={12} sm={6} md={3}>
+          <Grid key={character.id} item xs={12} sm={6} md={4} lg={3}>
             <Card character={character} />
           </Grid>
         ))}

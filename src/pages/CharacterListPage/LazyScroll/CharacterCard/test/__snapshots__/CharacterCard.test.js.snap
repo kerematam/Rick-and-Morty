@@ -22,23 +22,36 @@ exports[`CharacterCard should render correctly 1`] = `
     tabIndex={0}
     type="button"
   >
+    <span
+      className="MuiSkeleton-root MuiSkeleton-rect media MuiSkeleton-wave"
+      style={
+        Object {
+          "height": undefined,
+          "width": undefined,
+        }
+      }
+    />
     <img
-      className="MuiCardMedia-root media MuiCardMedia-media MuiCardMedia-img"
-      title="Rick Sanchez"
+      alt="Rick Sanchez"
+      className="media"
+      component="img"
+      onError={[Function]}
+      onLoad={[Function]}
+      src=""
+      style={
+        Object {
+          "display": "none",
+        }
+      }
     />
     <div
-      className="MuiCardContent-root content"
+      className="content"
     >
-      <h2
-        className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
+      <h6
+        className="MuiTypography-root text MuiTypography-h6 MuiTypography-gutterBottom"
       >
         Rick Sanchez
-      </h2>
-      <p
-        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
-      >
-        
-      </p>
+      </h6>
     </div>
     <span
       className="MuiCardActionArea-focusHighlight"
@@ -69,18 +82,32 @@ exports[`CharacterCard should render without crashing with corrupted backend dat
     tabIndex={0}
     type="button"
   >
+    <span
+      className="MuiSkeleton-root MuiSkeleton-rect media MuiSkeleton-wave"
+      style={
+        Object {
+          "height": undefined,
+          "width": undefined,
+        }
+      }
+    />
     <img
-      className="MuiCardMedia-root media MuiCardMedia-media MuiCardMedia-img"
-      title={null}
+      alt=""
+      className="media"
+      component="img"
+      onError={[Function]}
+      onLoad={[Function]}
+      style={
+        Object {
+          "display": "none",
+        }
+      }
     />
     <div
-      className="MuiCardContent-root content"
+      className="content"
     >
-      <h2
-        className="MuiTypography-root MuiTypography-h5 MuiTypography-gutterBottom"
-      />
-      <p
-        className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary"
+      <h6
+        className="MuiTypography-root text MuiTypography-h6 MuiTypography-gutterBottom"
       />
     </div>
     <span

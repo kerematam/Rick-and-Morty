@@ -1,20 +1,24 @@
 import React, { useCallback } from 'react'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
-import {
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Typography,
-} from '@material-ui/core'
+import { Card, CardActionArea, Typography } from '@material-ui/core'
 import history from 'utils/history'
 import {
   actions,
   useCharacterDetailReducerInjector,
 } from 'pages/CharacterPage/redux'
+import Image from 'components/Image'
 
 import styles from './CharacterCard.module.scss'
+
+const DetailItem = ({ label, value }) => {
+  return value ? (
+    <Typography className={styles.detail_item}>
+      <span className={styles.detail_item_key}>{label}</span>
+      <span className={styles.detail_item_value}>{value}</span>
+    </Typography>
+  ) : null
+}
 
 export default function CharacterCard({ character }) {
   useCharacterDetailReducerInjector()
@@ -24,23 +28,28 @@ export default function CharacterCard({ character }) {
     history.push(`/characters/${character.id}`)
   }, [dispatch, character])
 
+  const createdDate =
+    character?.created && new Date(character.created).toDateString()
+
   return (
     <Card square className={styles.root}>
       <CardActionArea onClick={handleClick}>
-        <CardMedia
+        <Image
           className={styles.media}
-          image={character?.image}
-          title={character?.name}
+          src={character?.image}
+          alt={character?.name || ''}
           component="img"
         />
-        <CardContent className={styles.content}>
-          <Typography gutterBottom variant="h5" component="h2">
+        <div className={styles.content}>
+          <Typography className={styles.text} variant="h6" gutterBottom>
             {character?.name}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {character?.type}
-          </Typography>
-        </CardContent>
+          <DetailItem label="Type" value={character?.type} />
+          <DetailItem label="Created" value={createdDate} />
+          <DetailItem label="Origin" value={character?.origin?.name} />
+          <DetailItem label="Status" value={character?.status} />
+          <DetailItem label="Species" value={character?.species} />
+        </div>
       </CardActionArea>
     </Card>
   )

@@ -116,13 +116,20 @@ exports[`BasicLayout correctly handles "/" route 1`] = `
     </span>
   </div>
   <div>
-    <div
-      className="root"
-    >
-      <div>
-        <div
-          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+    <div>
+      <div
+        className="img_container"
+      >
+        <img
+          alt="Loading"
+          className="img"
+          src="loading.jpg"
         />
+        <div
+          className="text"
+        >
+          Loading...
+        </div>
       </div>
     </div>
   </div>
@@ -177,6 +184,9 @@ exports[`BasicLayout correctly handles "/characters/1" route 1`] = `
             Characters
           </p>
         </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
       </button>
     </span>
     <span
@@ -235,6 +245,9 @@ exports[`BasicLayout correctly handles "/characters/1" route 1`] = `
             className="MuiTypography-root menu_item_text MuiTypography-body1"
           />
         </span>
+        <span
+          className="MuiTouchRipple-root"
+        />
       </button>
     </span>
   </div>
@@ -287,6 +300,9 @@ exports[`BasicLayout correctly handles "/characters/1" route 1`] = `
                 </span>
                 Characters Page
               </span>
+              <span
+                className="MuiTouchRipple-root"
+              />
             </button>
           </div>
           <div

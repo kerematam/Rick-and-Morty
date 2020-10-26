@@ -1,12 +1,45 @@
+$card_width: 300px;
+
 .root {
-  max-width: 350px;
-  max-height: 250px;
+  max-width: $card_width;
+  min-width: $card_width;
+
+  .media {
+    min-height: $card_width;
+    min-width: $card_width;
+  }
+
+  .content {
+    padding: 16px;
+    max-height: 25px;
+    position: absolute;
+    bottom: 0px;
+    background: black;
+    width: 100%;
+    opacity: 0.7;
+    transition: max-height 1s;
+    .text {
+      color: lightgrey;
+    }
+  }
+
+  :hover {
+    .content {
+      max-height: 100%;
+    }
+  }
 }
 
-.media {
-  height: 140px;
-}
-
-.content {
-  height: 100px;
+.detail_item {
+  max-width: calc(#{$card_width} - 32px);
+  display: flex;
+  justify-content: space-between;
+  .detail_item_key {
+    color: lightgrey;
+  }
+  .detail_item_value {
+    color: lightgrey;
+    text-align: right;
+    margin-left: 5px;
+  }
 }

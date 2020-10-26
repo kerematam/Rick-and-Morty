@@ -5,6 +5,7 @@ exports[`NatfoundPage should render correctly 1`] = `
   className="img_container"
 >
   <img
+    alt="404"
     className="img"
     src="404.jpg"
   />

@@ -6,10 +6,13 @@ import configureStore from 'redux/configureStore'
 import { HelmetProvider } from 'react-helmet-async'
 import { MemoryRouter } from 'react-router-dom'
 
-const setup = (path = '/') => {
-  const store = configureStore()
-  const wrapper = renderer
-    .create(
+const setup = async (path = '/') => {
+  let wrapper
+
+  await renderer.act(async () => {
+    const store = configureStore()
+
+    wrapper = await renderer.create(
       <Provider store={store}>
         <MemoryRouter initialEntries={[path]}>
           <HelmetProvider>
@@ -18,7 +21,7 @@ const setup = (path = '/') => {
         </MemoryRouter>
       </Provider>
     )
-    .toJSON()
+  })
 
   return {
     wrapper,
@@ -26,13 +29,13 @@ const setup = (path = '/') => {
 }
 
 describe('BasicLayout', () => {
-  test('correctly handles "/" route', () => {
-    const { wrapper } = setup('/')
+  test('correctly handles "/" route', async () => {
+    const { wrapper } = await setup('/')
     expect(wrapper).toMatchSnapshot()
   })
 
-  test('correctly handles "/characters/1" route', () => {
-    const { wrapper } = setup('/characters/1')
+  test('correctly handles "/characters/1" route', async () => {
+    const { wrapper } = await setup('/characters/1')
     expect(wrapper).toMatchSnapshot()
   })
 })
