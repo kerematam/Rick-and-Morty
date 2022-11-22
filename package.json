@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "husky": "^4.2.3",
+    "husky": "^4.3.8",
     "lint-staged": "^10.0.8",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.13.1"
